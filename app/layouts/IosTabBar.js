@@ -12,9 +12,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // App Imports
-import Home from '../components/Home';
-import Stickers from '../components/Stickers';
-import Settings from '../components/Settings';
+import Home from '../components/HomeComponent';
+import Stickers from '../components/StickersComponent';
+import Settings from '../components/SettingsComponent';
 
 export default class IosTabBar extends Component {
 

@@ -7,9 +7,9 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 
-import Home from '../components/Home';
-import Stickers from '../components/Stickers';
-import Settings from '../components/Settings';
+import HomeComponent from '../components/HomeComponent';
+import StickersComponent from '../components/StickersComponent';
+import SettingsComponent from '../components/SettingsComponent';
 
 const styles = StyleSheet.create({
   container: {
@@ -50,11 +50,11 @@ export default class AndroidTabBar extends Component {
   _renderScene = ({ route }) => {
     switch (route.key) {
     case '1':
-      return <Home />
+      return <HomeComponent />
     case '2':
-      return <Stickers />
+      return <StickersComponent />
     case '3':
-      return <Settings />
+      return <SettingsComponent />
     default:
       return null;
     }
