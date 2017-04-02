@@ -6,8 +6,7 @@ import thunk from 'redux-thunk';
 import MainReducer from '../reducers/MainReducer';
 import MainContainer from './MainContainer';
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-const store = createStoreWithMiddleware(MainReducer);
+const store = createStore(MainReducer, applyMiddleware(thunk));
 
 export default class App extends Component {
   render() {
