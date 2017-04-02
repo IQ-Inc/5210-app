@@ -7,11 +7,11 @@ import {
 
 export default SelectableListRow = (props) => {
 
-	const backgroundColor = (props.backgroundColor !== 'undefined') ? props.backgroundColor : '#000'
+	const backgroundColor = (props.backgroundColor !== 'undefined') ? props.backgroundColor : null
 
 	return (
-		<View style={{ backgroundColor:  backgroundColor, flexDirection: 'row' }}>
-			<TouchableHighlight onPress={props.onClick} style={{ height: 30 }}>
+		<View style={{ flex: 1, flexDirection: 'row' }}>
+			<TouchableHighlight underlayColor='orange' onPress={props.onClick} style={{ backgroundColor: backgroundColor }}>
 				<Text>{ props.text }</Text>
 			</TouchableHighlight>
 		</View>
