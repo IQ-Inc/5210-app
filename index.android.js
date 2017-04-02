@@ -1,7 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Android application kick-off hook.
+ * Ian
  */
 
 import React, { Component } from 'react';
@@ -17,9 +16,12 @@ import {
   Image
 } from 'react-native';
 
+// App Imports
+import AndroidTabBar from './app/layouts/AndroidTabBar';
 import Images from './app/config/images';
 
 export default class codefest extends Component {
+
   render() {
     return (
       <View style={{flex: 1}}>
@@ -27,6 +29,7 @@ export default class codefest extends Component {
         <View style={{flex: 1, backgroundColor: 'powderblue', alignItems: 'center'}}>
           <Image source={Images.logo.source} style={Images.logo.style} />
         </View>
+        <View style={{flex: 3}}><AndroidTabBar style={{backgroundColor: 'powderblue'}}/></View>
       </View>
     );
   }
