@@ -1,3 +1,18 @@
+/**
+ * SelectableList
+ *
+ * Creates instances of SelectableListRows based on a data property. The input list should
+ * have the form
+ * 
+ * 		[ { text: string, img?: ?string }... ] 		
+ *
+ * On click, the item in the list is highlighted, indicating that the item was selected. On
+ * click again, the item is deselected.
+ * 
+ * Provide a callback, onSelection(idx, total), to be informed when an item at index idx is
+ * selected, and the total number of selected items.
+ */
+
 import React from 'react'
 import {
 	ListView, 
@@ -59,8 +74,8 @@ export default class SelectableList extends React.Component {
   render() {
 
   	const intoRow = (row) => {
-  		const bgcolor = row.selected ? '#BBBBBB' : null
-  		return <SelectableListRow text={row.text} backgroundColor={bgcolor} onClick={ () => this._handleClick(row.idx) }/>
+  		const bgcolor = row.selected ? 'red' : null
+  		return <SelectableListRow text={row.text} backgroundColor={bgcolor} img={row.img} onClick={ () => this._handleClick(row.idx) }/>
   	}
 
     return (
