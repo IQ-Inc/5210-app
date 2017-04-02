@@ -5,14 +5,14 @@ import {
 	TouchableHighlight,
 } from 'react-native'
 
-export default const SelectableListRow = (props) => {
+export default SelectableListRow = (props) => {
+
+	const backgroundColor = (props.backgroundColor !== 'undefined') ? props.backgroundColor : '#000'
+
 	return (
-
-		const backgroundColor = this.props.backgroundColor ? this.props.backgroundColor : "#000"
-
-		<View style={{ flex: 1, backgroundColor:  backgroundColor }}>
-			<TouchableHighlight onPress={() => this.props.onClick() }>
-				<Text style={{ height: 50, flexDirection: 'row' }}>{ props.text }</Text>
+		<View style={{ backgroundColor:  backgroundColor, flexDirection: 'row' }}>
+			<TouchableHighlight onPress={props.onClick} style={{ height: 30 }}>
+				<Text>{ props.text }</Text>
 			</TouchableHighlight>
 		</View>
 	)
