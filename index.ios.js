@@ -9,23 +9,24 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
+// App Imports
+import IosTabBar from './app/layouts/IosTabBar';
+import Images from './app/config/images';
+
 export default class codefest extends Component {
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      <View style={{flex: 1}}>
+        <View style={{height: 20, backgroundColor: 'powderblue'}} />
+        <View style={{flex: 1, backgroundColor: 'powderblue', alignItems: 'center'}}>
+          <Image source={Images.logo.source} style={Images.logo.style} />
+        </View>
+        <IosTabBar />
       </View>
     );
   }
