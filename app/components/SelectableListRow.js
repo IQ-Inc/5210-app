@@ -1,3 +1,10 @@
+/*
+	SelectableListRow
+
+	A row component of a SelectableList. Shows the image and a text. When selected, the background is
+	updated. SelectableListRow is a stateless component. State is managed in SelectableList.
+ */
+
 import React from 'react'
 import {
 	Text,
@@ -15,13 +22,11 @@ export default SelectableListRow = (props) => {
 		return <Image source={img} style={{ height: 50, width: 50 }}/>
 	}
 	return (
-		<View style={{ flex: 1, flexDirection: 'row' }}>
-			<TouchableHighlight underlayColor='orange' onPress={props.onClick} style={{ backgroundColor: backgroundColor }}>
-				<View>
-					{makeImg(props.img)}
-					<Text>{ props.text }</Text>
-				</View>	
-			</TouchableHighlight>
-		</View>
+		<TouchableHighlight underlayColor='orange' onPress={props.onClick} style={{ backgroundColor: backgroundColor }}>
+			<View style={{ flex: 1, flexDirection: 'row' }}>
+				{makeImg(props.img)}
+				<Text>{ props.text }</Text>
+			</View>	
+		</TouchableHighlight>
 	)
 }
