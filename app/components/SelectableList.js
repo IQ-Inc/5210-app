@@ -53,7 +53,10 @@ import {
 	View
 } from 'react-native';
 
-import SelectableListRow from './SelectableListRow'
+import SelectableListRow, {
+  ROW_INCREMENT,
+  ROW_DECREMENT
+} from './SelectableListRow'
 
 export default class SelectableList extends React.Component {
 
@@ -63,11 +66,10 @@ export default class SelectableList extends React.Component {
 
     props.data.forEach( (elem, idx) => {
     	elem['idx'] = idx
-    	elem['selected'] = false
+      elem['count'] = 0
     })
 
     this.onSelection = (idx, total) => { null }
-    this.count = 0
     if ( props.onSelection !== null && ( typeof props.onSelection ) !== 'undefined' )
     	this.onSelection = props.onSelection
 
@@ -89,24 +91,33 @@ export default class SelectableList extends React.Component {
     )
   }
 
-  _handleClick(idx) {
+  _handleClick(idx, action) {
 
   	const data = this.state.data.slice()
-  	const selected = !data[idx].selected
 
-  	const count = selected ? this.count + 1 : this.count - 1
-  	this.onSelection(idx, count)
-  	this.count = count
+    let itemCount = data[idx].count;
+
+    if (action == ROW_DECREMENT && itemCount > 0)
+    {
+      itemCount--;
+    }
+    else if (action == ROW_INCREMENT)
+    {
+      itemCount++;
+    }
 
   	// We need to replace the whole *object*, not just the field
   	// in the object, for the ListView magic to notic and
   	// re-render the view...
   	data[idx] = {
   		...this.state.data[idx],
-  		selected: selected
+  		count: itemCount
   	}
 
+    const count = data.reduce((acc, d) => { return acc + d.count}, 0)
+    this.onSelection(idx, count)
   	const dataSource = this.state.dataSource.cloneWithRows(data)
+
   	this.setState({
   		data: data,
   		dataSource: dataSource
@@ -116,8 +127,7 @@ export default class SelectableList extends React.Component {
   render() {
 
   	const intoRow = (row) => {
-  		const bgcolor = row.selected ? '#DDDDDD' : null
-  		return <SelectableListRow text={row.text} backgroundColor={bgcolor} img={row.img} onClick={ () => this._handleClick(row.idx) }/>
+  		return <SelectableListRow text={row.text} count={row.count} img={row.img} onClick={ (action) => this._handleClick(row.idx, action) }/>
   	}
 
     return (

@@ -17,11 +17,15 @@ const data = [
 
 export default class Home extends Component {
 
+    onSelection(idx, total) {
+        alert(total)
+    }
+
     render() {
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, flexDirection:'row', backgroundColor: 'skyblue'}}>
-                    <SelectableList data={data}/>
+                    <SelectableList data={data} onSelection={this.onSelection} />
                 </View>
                 <View style={{flex: 1, flexDirection:'row', backgroundColor: 'steelblue'}}>
                     <View style={{flex: 1, alignItems: 'center'}}>

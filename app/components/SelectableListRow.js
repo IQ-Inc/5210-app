@@ -11,22 +11,28 @@ import {
 	View,
 	TouchableHighlight,
 	Image,
+	Button
 } from 'react-native'
 
-export default SelectableListRow = (props) => {
+export const ROW_INCREMENT = "ROW_INCREMENT"
+export const ROW_DECREMENT = "ROW_DECREMENT"
 
-	const backgroundColor = (typeof props.backgroundColor !== 'undefined') ? props.backgroundColor : null
+export default SelectableListRow = (props) => {
 
 	const makeImg = (img) => {
 		if (img === null || typeof img === 'undefined') return null
 		return <Image source={img} style={{ height: 50, width: 50 }}/>
 	}
+
 	return (
-		<TouchableHighlight underlayColor='orange' onPress={props.onClick} style={{ backgroundColor: backgroundColor }}>
-			<View style={{ flex: 1, flexDirection: 'row' }}>
-				{makeImg(props.img)}
-				<Text>{ props.text }</Text>
-			</View>	
-		</TouchableHighlight>
+		<View style={{ flex: 1, flexDirection: 'row' }}>
+			{makeImg(props.img)}
+			<Text style={{ flex: 4 }}>{ props.text }</Text>
+			<Button onPress={() => props.onClick(ROW_DECREMENT)}
+					title="-" />
+			<Text>{ props.count }</Text>
+			<Button onPress={() => props.onClick(ROW_INCREMENT)}
+					title="+" />
+		</View>	
 	)
 }
