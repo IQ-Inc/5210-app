@@ -5,6 +5,13 @@ const Images = {
             width: 200,
             height: 103
         }
+    },
+    moveLogo: {
+        source: require('../images/lets-move-logo.png'),
+        style: {
+            width: 311,
+            height: 100
+        }
     }
 }
 

@@ -16,18 +16,20 @@ import {
 // App Imports
 import IosTabBar from './app/layouts/IosTabBar';
 import Images from './app/config/images';
+import Onboarding from './app/layouts/Onboarding';
 
 export default class codefest extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
-        <View style={{height: 20, backgroundColor: 'powderblue'}} />
-        <View style={{flex: 1, backgroundColor: 'powderblue', alignItems: 'center'}}>
-          <Image source={Images.logo.source} style={Images.logo.style} />
-        </View>
-        <IosTabBar />
-      </View>
+      <Onboarding />
+//      <View style={{flex: 1}}>
+//        <View style={{height: 20, backgroundColor: 'powderblue'}} />
+//        <View style={{flex: 1, backgroundColor: 'powderblue', alignItems: 'center'}}>
+//          <Image source={Images.logo.source} style={Images.logo.style} />
+//        </View>
+//        <IosTabBar />
+ //     </View>
     );
   }
 }
