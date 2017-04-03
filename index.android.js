@@ -1,8 +1,3 @@
-/**
- * Android application kick-off hook.
- * Ian
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -11,24 +6,13 @@ import {
   View,
   Image
 } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import MainScreen from './app/components/Main';
+import FoodTrackerScreen from './app/components/FoodTracker';
 
-// App Imports
-import AndroidTabBar from './app/layouts/AndroidTabBar';
-import Images from './app/config/images';
-
-export default class codefest extends Component {
-
-  render() {
-    return (
-      <View style={{flex: 1}}>
-        <View style={{height: 20, backgroundColor: 'powderblue'}} />
-        <View style={{flex: 1, backgroundColor: 'powderblue', alignItems: 'center'}}>
-          <Image source={Images.logo.source} style={Images.logo.style} />
-        </View>
-        <View style={{flex: 3}}><AndroidTabBar style={{backgroundColor: 'powderblue'}}/></View>
-      </View>
-    );
-  }
-}
+const codefest = StackNavigator({
+    Main: { screen: MainScreen },
+    FoodTracker: { screen: FoodTrackerScreen }
+});
 
 AppRegistry.registerComponent('codefest', () => codefest);

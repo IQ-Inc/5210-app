@@ -50,7 +50,7 @@ export default class AndroidTabBar extends Component {
   _renderScene = ({ route }) => {
     switch (route.key) {
     case '1':
-      return <Home />
+      return <Home navigation={this.props.navigation}/>
     case '2':
       return <Stickers />
     case '3':
