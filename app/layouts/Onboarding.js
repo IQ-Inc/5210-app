@@ -48,7 +48,7 @@ export default class Onboarding extends Component {
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
                 removeClippedSubviews={true}
-                scrollEnabled={true}
+                scrollEnabled={false}
                 scrollsToTop={false}
                 ref={(component) => {
                     this.scrollView = component;
