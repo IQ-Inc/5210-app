@@ -22,13 +22,6 @@ export default class codefest extends Component {
   render() {
     return (
       <Onboarding/>
-      // <View style={{flex: 1}}>
-      //   <View style={{height: 20, backgroundColor: 'powderblue'}} />
-      //   <View style={{flex: 1, backgroundColor: 'powderblue', alignItems: 'center'}}>
-      //     <Image source={Images.logo.source} style={Images.logo.style} />
-      //   </View>
-      //   <View style={{flex: 3}}><AndroidTabBar style={{backgroundColor: 'powderblue'}}/></View>
-      // </View>
     );
   }
 }
