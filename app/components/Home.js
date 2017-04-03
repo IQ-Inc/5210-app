@@ -11,14 +11,13 @@ const data = [
     { text: "apples"    , img: require("../images/foods/cherries.png") },
     { text: "cherries"  , img: require("../images/foods/cherries.png") },
     { text: "bananas"   , img: require("../images/foods/cherries.png") },
-    { text: "noimage is OK to have, need to work on spacing..." },
     { text: "grapes"    , img: require("../images/foods/cherries.png") }
 ]
 
 export default class Home extends Component {
 
     onSelection(idx, total) {
-        alert(total)
+        // alert(total)
     }
 
     render() {

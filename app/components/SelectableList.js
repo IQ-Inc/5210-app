@@ -84,8 +84,8 @@ export default class SelectableList extends React.Component {
       <View
         key={`${sectionID}-${rowID}`}
         style={{
-          height: 1,
-          backgroundColor: '#000',
+          height: 2,
+          backgroundColor: 'white',
         }}
       />
     )
