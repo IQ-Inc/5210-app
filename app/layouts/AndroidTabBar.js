@@ -28,10 +28,10 @@ export default class AndroidTabBar extends Component {
   state = {
     index: 0,
     routes: [
-      { key: '1', title: 'Home' },
-      { key: '2', title: 'Stars' },
-      { key: '3', title: 'History' },
-      { key: '4', title: 'Settings' },
+      { key: '1' },
+      { key: '2' },
+      { key: '3' },
+      { key: '4' },
     ],
   };
 
@@ -43,7 +43,7 @@ export default class AndroidTabBar extends Component {
   	// Not sure why props doesn't provide this;
   	// need to get it from the this pointer...
   	let { backgroundColor } = this.props.style;
-    return <TabBar {...props} style={{backgroundColor}} labelStyle={styles.label} />;
+    return <TabBar {...props} style={{backgroundColor}} labelStyle={styles.label} renderIcon={this._renderIcon}/>;
   };
 
   _renderScene = ({ route }) => {
@@ -58,6 +58,33 @@ export default class AndroidTabBar extends Component {
         return <Settings />
     default:
       return null;
+    }
+  };
+
+  _renderIcon = ({route}) => {
+    switch(route.key) {
+        case '1':
+            return  <MCIcons
+                       name="home-outline"
+                       size={36}
+                       />
+        case '2':
+            return <MCIcons
+                       name="sticker"
+                       size={36}
+                       />
+        case '3':
+             return <MCIcons
+                       name="history"
+                       size={36}
+                       />
+        case '4':
+             return <MCIcons
+                       name="settings"
+                       size={36}
+                       />
+        default:
+            return null;
     }
   };
 
