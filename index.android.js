@@ -9,10 +9,12 @@ import {
 import { StackNavigator } from 'react-navigation';
 import MainScreen from './app/components/Main';
 import FoodTrackerScreen from './app/components/FoodTracker';
+import ScreenTimeTrackerScreen from './app/components/ScreenTimeTracker';
 
 const codefest = StackNavigator({
     Main: { screen: MainScreen },
-    FoodTracker: { screen: FoodTrackerScreen }
+    FoodTracker: { screen: FoodTrackerScreen },
+    ScreenTimeTracker: { screen : ScreenTimeTrackerScreen }
 });
 
 AppRegistry.registerComponent('codefest', () => codefest);
