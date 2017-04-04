@@ -49,6 +49,8 @@ export default class Onboarding extends Component {
     render() {
         let {height, width} = Dimensions.get('window');
 
+        let buttonWidth = width - (styles.input.marginHorizontal * 2);
+
         return (
             <ScrollView
                 horizontal={true}
@@ -70,7 +72,7 @@ export default class Onboarding extends Component {
                     <FAIcons name='location-arrow' size={50} style={styles.icon} />
                     <Text style={styles.header}>What is your ZipCode?</Text>
                     <TextInput
-                        style={styles.input}
+                        style={[styles.input, {width: buttonWidth}]}
                         keyboardType='numeric'
                         maxLength={5}
                         onChangeText={(zipcode) => this.setState({zipcode})}
@@ -79,7 +81,7 @@ export default class Onboarding extends Component {
                 </View>
                 <View style={[styles.fullScreen, styles.lastPage, {height, width}, {backgroundColor: 'steelblue'}]}>
                     <FAIcons name='home' size={50} style={styles.icon} />
-                    <Text style={styles.header}>What is your household size?</Text>
+                    <Text style={[styles.header, {width: buttonWidth}]}>What is your household size?</Text>
                     <TextInput
                         style={styles.input}
                         keyboardType='numeric'
@@ -90,7 +92,7 @@ export default class Onboarding extends Component {
                 </View>
                 <View style={[styles.fullScreen, styles.lastPage, {height, width}, {backgroundColor: 'skyblue'}]}>
                     <FAIcons name='child' size={50} style={styles.icon} />
-                    <Text style={styles.header}>How old is your child?</Text>
+                    <Text style={[styles.header, {width: buttonWidth}]}>How old is your child?</Text>
                     <TextInput
                         style={styles.input}
                         keyboardType='numeric'
@@ -123,11 +125,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     input: {
+        borderRadius: 10,
         justifyContent: 'center',
         height: 50,
         marginHorizontal: 20,
         marginVertical: 10,
-        padding: 5,
+        paddingHorizontal: 5,
+        paddingVertical: 5,
         backgroundColor: '#ffffff'
     },
     icon: {
