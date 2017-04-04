@@ -14,12 +14,26 @@ const Images = {
         }
     },
     screenTime: {
-            source: require('../images/Music_Entertainment-25.png'),
-            style: {
-                width: 128,
-                height: 128
-            }
+        source: require('../images/Music_Entertainment-25.png'),
+        style: {
+            width: 128,
+            height: 128
         }
+    },
+    water: {
+        source: require('../images/Water-03.png'),
+        style: {
+            width: 128,
+            height: 128
+        }
+    },
+    activity: {
+        source: require('../images/Sports-21.png'),
+        style: {
+            width: 128,
+            height: 128
+        }
+    }
 }
 
 export default Images;

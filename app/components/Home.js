@@ -29,10 +29,14 @@ export default class Home extends Component {
                 </View>
                 <View style={{flex: 1, flexDirection:'row', backgroundColor: 'powderblue'}}>
                     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                        <Text>1</Text>
+                        <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('ActivityTracker')}>
+                            <Image source={Images.activity.source} style={Images.activity.style} />
+                        </TouchableOpacity>
                     </View>
                     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                        <Text>0</Text>
+                        <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('DrinkTracker')}>
+                            <Image source={Images.water.source} style={Images.water.style} />
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>

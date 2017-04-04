@@ -1,11 +1,9 @@
-/**
- * An Android tab bar
- * Ian
- */
-
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Home from '../components/Home';
 import Stickers from '../components/Stickers';
@@ -32,7 +30,8 @@ export default class AndroidTabBar extends Component {
     routes: [
       { key: '1', title: 'Home' },
       { key: '2', title: 'Stars' },
-      { key: '3', title: 'Settings' },
+      { key: '3', title: 'History' },
+      { key: '4', title: 'Settings' },
     ],
   };
 
@@ -54,7 +53,9 @@ export default class AndroidTabBar extends Component {
     case '2':
       return <Stickers />
     case '3':
-      return <Settings />
+      return null;
+    case '4':
+        return <Settings />
     default:
       return null;
     }
