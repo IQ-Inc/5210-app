@@ -7,17 +7,25 @@ import {
   StatusBar,
   Image,
   ScrollView,
-  Dimensions
+  Dimensions,
+  TextInput
 } from 'react-native';
 
 // Third Part Icons
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FAIcons from 'react-native-vector-icons/FontAwesome';
 
 import Images from '../config/images';
 import OnboardingButton from '../components/OnboardButton';
 
 export default class Onboarding extends Component {
+
+    state = {
+        zipcode: '',
+        household: '',
+        child_age: ''
+    }
 
     constructor(props) {
         super(props);
@@ -58,13 +66,43 @@ export default class Onboarding extends Component {
                     <Image source={Images.moveLogo.source} style={Images.moveLogo.style} />
                     <OnboardingButton text="Get Started!" onPress={this._next} />
                 </View>
-                <View style={[styles.fullScreen, styles.nextPage, {height, width}]}>
-                    <Text style={styles.header}>Next Page</Text>
+                <View style={[styles.fullScreen, styles.nextPage, {height, width}, {backgroundColor: 'skyblue'}]}>
+                    <FAIcons name='location-arrow' size={50} style={styles.icon} />
+                    <Text style={styles.header}>What is your ZipCode?</Text>
+                    <TextInput
+                        style={styles.input}
+                        keyboardType='numeric'
+                        maxLength={5}
+                        onChangeText={(zipcode) => this.setState({zipcode})}
+                    />
                     <OnboardingButton text="Next" onPress={this._next} />
                 </View>
-                <View style={[styles.fullScreen, styles.lastPage, {height, width}]}>
-                    <Text style={styles.header} onPress={this._next}>Last Page</Text>
-                    <OnboardingButton text="Submit" />
+                <View style={[styles.fullScreen, styles.lastPage, {height, width}, {backgroundColor: 'steelblue'}]}>
+                    <FAIcons name='home' size={50} style={styles.icon} />
+                    <Text style={styles.header}>What is your household size?</Text>
+                    <TextInput
+                        style={styles.input}
+                        keyboardType='numeric'
+                        maxLength={2}
+                        onChangeText={(household) => this.setState({household})}
+                    />
+                    <OnboardingButton text="Next" onPress={this._next} />
+                </View>
+                <View style={[styles.fullScreen, styles.lastPage, {height, width}, {backgroundColor: 'skyblue'}]}>
+                    <FAIcons name='child' size={50} style={styles.icon} />
+                    <Text style={styles.header}>How old is your child?</Text>
+                    <TextInput
+                        style={styles.input}
+                        keyboardType='numeric'
+                        maxLength={1}
+                        onChangeText={(child_age) => this.setState({child_age})}
+                    />
+                    <OnboardingButton text="Next" onPress={this._next} />
+                </View>
+                <View style={[styles.fullScreen, styles.lastPage, {height, width}, {backgroundColor: 'steelblue'}]}>
+                    <FAIcons name='check' size={50} style={styles.icon} />
+                    <Text style={styles.header}>Finished!</Text>
+                    <OnboardingButton text="Track Your Progress!" onPress={this._next} />
                 </View>
             </ScrollView>
         )
@@ -78,16 +116,22 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'powderblue'
     },
-    nextPage: {
-        backgroundColor: 'skyblue'
-    },
-    lastPage: {
-        backgroundColor: 'steelblue'
-    },
     header: {
         fontFamily: 'Avenir',
-        fontSize: 40,
+        fontSize: 20,
         color: '#ffffff',
         fontWeight: 'bold'
+    },
+    input: {
+        justifyContent: 'center',
+        height: 50,
+        marginHorizontal: 20,
+        marginVertical: 10,
+        padding: 5,
+        backgroundColor: '#ffffff'
+    },
+    icon: {
+        color: '#ffffff',
+        marginVertical: 20
     }
 });

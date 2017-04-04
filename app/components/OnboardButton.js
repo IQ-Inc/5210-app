@@ -17,7 +17,7 @@ export default class OnboardingButton extends Component {
 
     render() {
         return (
-            <TouchableOpacity onPress={this.props.onPress}>
+            <TouchableOpacity onPress={this.props.onPress} disabled={this.props.disabled}>
                 <View style={{flex: 1}} style={styles.button}>
                     <Text style={styles.text}>{this.props.text.toUpperCase()}</Text>
                 </View>
