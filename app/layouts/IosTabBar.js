@@ -18,6 +18,12 @@ import Settings from '../components/Settings';
 
 export default class IosTabBar extends Component {
 
+    static navigationOptions = {
+        header : {
+            visible: false,
+        }
+    };
+
     state = {
         selectedTab: 'home'
     }
@@ -40,7 +46,7 @@ export default class IosTabBar extends Component {
                         selectedTab: 'home',
                     });
                     }}>
-                    <Home />
+                    <Home navigation={this.props.navigation} />
                 </Ionicons.TabBarItemIOS>
                 <MCIcons.TabBarItemIOS
                     title="Stickers"

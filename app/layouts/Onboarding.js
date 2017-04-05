@@ -23,6 +23,12 @@ import OnboardingButton from '../components/OnboardButton';
 
 export default class Onboarding extends Component {
 
+    static navigationOptions = {
+        header : {
+            visible: false,
+        }
+    };
+
     state = {
         zipcode: '',
         household: '',
@@ -50,9 +56,11 @@ export default class Onboarding extends Component {
     }
 
     _submit() {
+        const { navigate } = this.props.navigation;
         AsyncStorage.setItem('@5210App:onboard_complete', JSON.stringify(true))
                     .then(onboard_complete => {
-
+                        this.setState({onboard_complete});
+                        navigate('Main');
                     })
                     .catch(err => {
                         console.error("Unable to save onboard_complete");
