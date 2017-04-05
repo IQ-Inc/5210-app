@@ -9,29 +9,37 @@ const Images = {
     foodTracker: {
         source: require('../images/Food_Fruit_Vegetables-06.png'),
         style: {
+            flex: 1,
             width: 128,
-            height: 128
+            height: 128,
+            resizeMode: 'contain'
         }
     },
     screenTime: {
         source: require('../images/Music_Entertainment-25.png'),
         style: {
+            flex: 1,
             width: 128,
-            height: 128
+            height: 128,
+            resizeMode: 'contain'
         }
     },
     water: {
         source: require('../images/Water-03.png'),
         style: {
+            flex: 1,
             width: 128,
-            height: 128
+            height: 128,
+            resizeMode: 'contain'
         }
     },
     activity: {
         source: require('../images/Sports-21.png'),
         style: {
-            width: 128,
-            height: 128
+           flex: 1,
+           width: 128,
+           height: 128,
+           resizeMode: 'contain'
         }
     }
 }
