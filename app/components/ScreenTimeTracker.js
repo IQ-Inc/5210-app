@@ -17,6 +17,7 @@ const data = [
 export default class Settings extends Component {
  static navigationOptions = {
          header : {
+            title: '< 2 hours of screen time',
             style: {
                 backgroundColor: "skyblue"
             },

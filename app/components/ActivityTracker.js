@@ -25,6 +25,7 @@ const data = [
 export default class Settings extends Component {
  static navigationOptions = {
          header : {
+            title: '1 hour + of physical activity',
             style: {
                 backgroundColor: "skyblue"
             },

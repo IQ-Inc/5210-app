@@ -22,6 +22,7 @@ const data = [
 
 export default class Settings extends Component {
     static navigationOptions = {
+        title: '5 or more fruits & veggies',
          header : {
             style: {
                 backgroundColor: "skyblue"

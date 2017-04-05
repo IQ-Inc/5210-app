@@ -18,6 +18,7 @@ const data = [
 export default class Settings extends Component {
  static navigationOptions = {
          header : {
+            title: '0 sugary drinks & more water',
             style: {
                 backgroundColor: "skyblue"
             },
