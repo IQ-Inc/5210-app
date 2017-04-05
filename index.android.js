@@ -13,6 +13,11 @@ import ScreenTimeTrackerScreen from './app/components/ScreenTimeTracker';
 import DrinkTrackerScreen from './app/components/DrinkTracker';
 import ActivityTrackerScreen from './app/components/ActivityTracker';
 
+// App Imports
+import AndroidTabBar from './app/layouts/AndroidTabBar';
+import Images from './app/config/images';
+import Onboarding from './app/layouts/Onboarding';
+
 const codefest = StackNavigator({
     Main: { screen: MainScreen },
     FoodTracker: { screen: FoodTrackerScreen },

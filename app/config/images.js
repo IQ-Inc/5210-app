@@ -6,6 +6,13 @@ const Images = {
             height: 103
         }
     },
+    moveLogo: {
+        source: require('../images/lets-move-logo.png'),
+        style: {
+            width: 311,
+            height: 100
+        }
+    },
     foodTracker: {
         source: require('../images/Food_Fruit_Vegetables-06.png'),
         style: {

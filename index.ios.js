@@ -10,45 +10,32 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  AsyncStorage
 } from 'react-native';
+
+import { StackNavigator } from 'react-navigation';
+import MainScreen from './app/components/Main';
+import OnboardingScreen from './app/layouts/Onboarding';
+import FoodTrackerScreen from './app/components/FoodTracker';
+import ScreenTimeTrackerScreen from './app/components/ScreenTimeTracker';
+import DrinkTrackerScreen from './app/components/DrinkTracker';
+import ActivityTrackerScreen from './app/components/ActivityTracker';
 
 // App Imports
 import IosTabBar from './app/layouts/IosTabBar';
 import Images from './app/config/images';
 
-export default class codefest extends Component {
-
-  render() {
-    return (
-      <View style={{flex: 1}}>
-        <View style={{height: 20, backgroundColor: 'powderblue'}} />
-        <View style={{flex: 1, backgroundColor: 'powderblue', alignItems: 'center'}}>
-          <Image source={Images.logo.source} style={Images.logo.style} />
-        </View>
-        <IosTabBar />
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+const codefest = StackNavigator({
+    Main: { screen: MainScreen },
+    Onboarding: { screen: OnboardingScreen },
+    FoodTracker: { screen: FoodTrackerScreen },
+    ScreenTimeTracker: { screen : ScreenTimeTrackerScreen },
+    DrinkTracker: { screen: DrinkTrackerScreen },
+    ActivityTracker: { screen: ActivityTrackerScreen },
+},
+{
+  headerMode: 'screen'
 });
 
 AppRegistry.registerComponent('codefest', () => codefest);
