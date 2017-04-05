@@ -9,7 +9,8 @@ import {
   ScrollView,
   Dimensions,
   TextInput,
-  AsyncStorage
+  AsyncStorage,
+  Platform,
 } from 'react-native';
 
 // Third Part Icons
@@ -140,6 +141,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         marginVertical: 10,
         padding: 5,
+        width: (Platform.OS == 'ios') ? null : 200,
+        textAlign: 'center',
         backgroundColor: '#ffffff'
     },
     icon: {
