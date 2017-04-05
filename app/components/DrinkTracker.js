@@ -7,8 +7,12 @@ import {
 import SelectableList from './SelectableList';
 
 const data = [
-    { text: "soda"    , img: require("../images/drinks/soda.png") },
-    { text: "water"  , img: require("../images/drinks/water.png") },
+    { text: "iced tea"    , img: require("../images/drinks/iced tea.png") },
+    { text: "juice"  , img: require("../images/drinks/juice.png") },
+    { text: "juice box"  , img: require("../images/drinks/juicebox.png") },
+    { text: "lemonade"  , img: require("../images/drinks/lemonade.png") },
+    { text: "soda"  , img: require("../images/drinks/soda.png") },
+    { text: "sports drink"  , img: require("../images/drinks/sports drink.png") },
 ]
 
 export default class Settings extends Component {
