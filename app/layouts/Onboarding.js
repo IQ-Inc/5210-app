@@ -8,7 +8,8 @@ import {
   Image,
   ScrollView,
   Dimensions,
-  TextInput
+  TextInput,
+  AsyncStorage
 } from 'react-native';
 
 // Third Part Icons
@@ -34,6 +35,7 @@ export default class Onboarding extends Component {
         // with the extremely clicky keys.
 
         this._next = this._next.bind(this);
+        this._submit = this._submit.bind(this);
         this.index = 0;
         this.scrollView = 'undefined';
     }
@@ -44,6 +46,16 @@ export default class Onboarding extends Component {
         width *= ++this.index;
 
         this.scrollView.scrollTo({x: width, y: 0, animated: true});
+    }
+
+    _submit() {
+        AsyncStorage.setItem('@5210App:onboard_complete', JSON.stringify(true))
+                    .then(onboard_complete => {
+
+                    })
+                    .catch(err => {
+                        console.error("Unable to save onboard_complete");
+                    });
     }
 
     render() {
@@ -102,7 +114,7 @@ export default class Onboarding extends Component {
                 <View style={[styles.fullScreen, styles.lastPage, {height, width}, {backgroundColor: 'steelblue'}]}>
                     <FAIcons name='check' size={50} style={styles.icon} />
                     <Text style={styles.header}>Finished!</Text>
-                    <OnboardingButton text="Track Your Progress!" onPress={this._next} />
+                    <OnboardingButton text="Track Your Progress!" onPress={this._submit} />
                 </View>
             </ScrollView>
         )
