@@ -27,7 +27,7 @@ export default class Settings extends Component {
             style: {
                 backgroundColor: "skyblue"
             },
-            tintColor: "white"
+            tintColor: "white",
          }
        };
     render() {

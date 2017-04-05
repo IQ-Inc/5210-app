@@ -3,7 +3,7 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import Images from '../config/images';
 
