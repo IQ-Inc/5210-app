@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import {
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 import SelectableList from './SelectableList';
 
@@ -16,14 +17,15 @@ const data = [
 
 export default class Settings extends Component {
  static navigationOptions = {
-   header : {
-      title: '< 2 hours of screen time',
-      style: {
-          backgroundColor: "skyblue"
-      },
-      tintColor: "white"
-    } 
-  };
+        header : {
+        title: 'Select minutes of screen time',
+        right: <Button title="Next"/>,
+        style: {
+            backgroundColor: "skyblue"
+        },
+        tintColor: "white"
+     }
+   };
 
   constructor(props) {
     super(props)

@@ -156,7 +156,44 @@ const Images = {
                        height: 64,
                        resizeMode: 'contain'
                    }
-               }
+               },
+               five: {
+                    source: require('../images/5 circle with words.png'),
+                   style: {
+                       flex: 1,
+                       width: 128,
+                       height: 128,
+                       resizeMode: 'contain'
+                   }
+               },
+               two: {
+                  source: require('../images/2 circle with words.png'),
+                  style: {
+                      flex: 1,
+                      width: 128,
+                      height: 128,
+                      resizeMode: 'contain'
+                  }
+              },
+              one: {
+                  source: require('../images/1 circle with words.png'),
+                 style: {
+                     flex: 1,
+                     width: 128,
+                     height: 128,
+                     resizeMode: 'contain'
+                 }
+             },
+             zero: {
+                 source: require('../images/0 circle with words.png'),
+                style: {
+                    flex: 1,
+                    width: 128,
+                    height: 128,
+                    resizeMode: 'contain'
+                }
+            },
+
 
 }
 

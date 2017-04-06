@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import {
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 import SelectableList from './SelectableList';
 
@@ -22,9 +23,13 @@ const data = [
 ]
 
 export default class Settings extends Component {
+    constructor(props){
+        super(props);
+    }
     static navigationOptions = {
-        title: '5 or more fruits & veggies',
          header : {
+            title: 'Select number of servings',
+            right: <Button title="Next"/>,
             style: {
                 backgroundColor: "skyblue"
             },
@@ -38,6 +43,8 @@ export default class Settings extends Component {
   }
 
     render() {
+        const { navigate } = this.props.navigation;
+
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, flexDirection:'row', backgroundColor: 'skyblue'}}>
