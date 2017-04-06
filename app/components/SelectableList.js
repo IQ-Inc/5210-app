@@ -118,7 +118,11 @@ export default class SelectableList extends React.Component {
   render() {
 
   	const intoRow = (row) => {
-  		return <SelectableListRow text={row.text} count={row.count} img={row.img} onClick={ (action) => this._handleClick(row.idx, action) }/>
+  		return <SelectableListRow text={row.text}
+                                count={row.count}
+                                img={row.img} 
+                                onClick={ (action) => this._handleClick(row.idx, action) }
+                                step={this.props.step} />
   	}
 
     return (

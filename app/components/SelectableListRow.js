@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
 })
 
 export default SelectableListRow = (props) => {
@@ -58,6 +59,11 @@ export default SelectableListRow = (props) => {
 		return <Image source={img} style={styles.image}/>
 	}
 
+  const step = (props.step != null && typeof props.step != 'undefined')
+             ? props.step
+             : 1
+  const count = props.count
+
 	return (
 		<View style={styles.row}>
 
@@ -66,11 +72,11 @@ export default SelectableListRow = (props) => {
 			<Text style={styles.text}>{ props.text.toUpperCase() }</Text>
 
       <View style={styles.counters}>
-        <Icon name="minus" size={30} color='white' onPress={() => props.onClick(props.count > 0 ? props.count - 1 : props.count)} />
+        <Icon name="minus" size={30} color='white' onPress={() => props.onClick(count > 0 ? count - step : count)} />
 
-        <Text style={styles.count}>{ props.count }</Text>
+        <Text style={styles.count}>{ count }</Text>
 
-        <Icon name="plus" size={30} color='white' onPress={() => props.onClick(props.count + 1)} />
+        <Icon name="plus" size={30} color='white' onPress={() => props.onClick(count + step)} />
 
       </View>
 
