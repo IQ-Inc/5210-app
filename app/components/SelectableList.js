@@ -69,6 +69,10 @@ export default class SelectableList extends React.Component {
     if ( props.onSelection !== null && ( typeof props.onSelection ) !== 'undefined' )
     	this.onSelection = props.onSelection
 
+    this.onChange = (arr) => { null }
+    if ( props.onChange !== null && typeof props.onChange !== 'undefined' )
+      this.onChange = props.onChange
+
     this.state = {
       data: props.data,
       dataSource: ds.cloneWithRows(props.data)
@@ -107,6 +111,9 @@ export default class SelectableList extends React.Component {
   		...this.state.data[idx],
   		count: count
   	}
+
+    this.onChange( data )
+    
   	const dataSource = this.state.dataSource.cloneWithRows(data)
 
   	this.setState({

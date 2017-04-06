@@ -32,12 +32,18 @@ export default class Settings extends Component {
             tintColor: "white"
          }
        };
+
+    _onChange(data) {
+        const minutes = data.reduce((acc, elem) => { return acc + elem.count }, 0)
+        this.setState({ minutes })
+    }
+
     render() {
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, flexDirection:'row', backgroundColor: 'skyblue'}}>
                     <SelectableList data={data}
-                                    onSelection={this.onSelection}
+                                    onChange={this._onChange}
                                     step={15} />
                 </View>
             </View>
