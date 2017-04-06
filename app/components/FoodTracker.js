@@ -18,6 +18,7 @@ const data = [
     { text: "cabbage"    , img: require("../images/foods/cabbage.png") },
     { text: "carrot"    , img: require("../images/foods/carrot.png") },
     { text: "grapes"    , img: require("../images/foods/grapes.png") },
+
 ]
 
 export default class Settings extends Component {

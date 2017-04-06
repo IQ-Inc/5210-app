@@ -22,14 +22,14 @@ export const ROW_DECREMENT = "ROW_DECREMENT"
 const styles = StyleSheet.create({
   text: {
     paddingHorizontal: 12,
-    fontSize: 24,
+    fontSize: 20,
     color: 'white',
     flex: 4,
   },
 
   image: {
-    height: 50,
-    width: 50,
+    height: 128,
+    width: 128,
   },
 
   row: {
