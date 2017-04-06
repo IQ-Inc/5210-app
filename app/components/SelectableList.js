@@ -3,10 +3,6 @@
 	Creates instances of SelectableListRows based on a data property list. The input list should
 	have the form
 			[ { text: string, img?: require("path/to/img") }... ]
-	On click, the item in the list is highlighted, indicating that the item was selected. On
-	click again, the item is deselected.
-	Optionally provide a callback, onSelection(idx, total), to be informed when an item at index idx is
-	selected, and the total number of selected items.
 
     Example:
 
@@ -23,11 +19,18 @@
 				super(props)
 				this.state = { count: 0 }
 			}
-			onSelection(index, totalCount) {
+
+      //
+      // onSelection can be registered, and it receives
+      // a callback when a row, identified by index, is
+      // changed to a new count of count
+      //
+			onSelection(index, count) {
 				alert(data[index].text)
 				const newCount = totalCount
 				this.setState({ count: newCount })
 			}
+
 			render() {
 				return (
 					<View>
@@ -36,7 +39,7 @@
 					</View
 				)
 			}
-	  	}
+  	}
  */
 
 import React from 'react'
@@ -72,6 +75,9 @@ export default class SelectableList extends React.Component {
     };
   }
 
+  /**
+   * Render row separators
+   */
   _renderSeparator(sectionID, rowID, adjacentClicked) {
   	return (
       <View
@@ -84,31 +90,23 @@ export default class SelectableList extends React.Component {
     )
   }
 
-  _handleClick(idx, action) {
+  /**
+   * Handle click events on the -/+ buttons in rows.
+   * Redraw the rows, if necessary.
+   */
+  _handleClick(idx, count) {
+
+    this.onSelection(idx, count)
 
   	const data = this.state.data.slice()
-
-    let itemCount = data[idx].count;
-
-    if (action == ROW_DECREMENT && itemCount > 0)
-    {
-      itemCount--;
-    }
-    else if (action == ROW_INCREMENT)
-    {
-      itemCount++;
-    }
 
   	// We need to replace the whole *object*, not just the field
   	// in the object, for the ListView magic to notic and
   	// re-render the view...
   	data[idx] = {
   		...this.state.data[idx],
-  		count: itemCount
+  		count: count
   	}
-
-    const count = data.reduce((acc, d) => { return acc + d.count}, 0)
-    this.onSelection(idx, count)
   	const dataSource = this.state.dataSource.cloneWithRows(data)
 
   	this.setState({

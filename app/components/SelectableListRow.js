@@ -16,9 +16,6 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-export const ROW_INCREMENT = "ROW_INCREMENT"
-export const ROW_DECREMENT = "ROW_DECREMENT"
-
 const styles = StyleSheet.create({
   text: {
     paddingHorizontal: 12,
@@ -69,11 +66,11 @@ export default SelectableListRow = (props) => {
 			<Text style={styles.text}>{ props.text.toUpperCase() }</Text>
 
       <View style={styles.counters}>
-        <Icon name="minus" size={30} color='white' onPress={() => props.onClick(ROW_DECREMENT)} />
+        <Icon name="minus" size={30} color='white' onPress={() => props.onClick(props.count > 0 ? props.count - 1 : props.count)} />
 
         <Text style={styles.count}>{ props.count }</Text>
 
-        <Icon name="plus" size={30} color='white' onPress={() => props.onClick(ROW_INCREMENT)} />
+        <Icon name="plus" size={30} color='white' onPress={() => props.onClick(props.count + 1)} />
 
       </View>
 
