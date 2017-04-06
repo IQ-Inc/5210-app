@@ -34,7 +34,7 @@ export default class Home extends Component {
                 <View style={{flex: 1}}>
                     <View style={{flex: 7, flexDirection:'row', backgroundColor: 'powderblue'}}>
                         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} >
-                            <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('FoodTracker')}>
+                            <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('FoodTracker', {navigation: this.props.navigation})}>
                                 <Image source={Images.foodTracker.source} style={Images.foodTracker.style} />
                             </TouchableOpacity>
                         </View>

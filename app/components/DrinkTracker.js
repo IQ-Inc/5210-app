@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import {
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 import SelectableList from './SelectableList';
 
@@ -19,7 +20,8 @@ const data = [
 export default class Settings extends Component {
  static navigationOptions = {
          header : {
-            title: '0 sugary drinks & more water',
+            right: <Button title="Save"/>,
+            title: 'Select number of servings',
             style: {
                 backgroundColor: "skyblue"
             },

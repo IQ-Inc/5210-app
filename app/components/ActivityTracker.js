@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import {
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 import SelectableList from './SelectableList';
 
@@ -25,7 +26,8 @@ const data = [
 export default class Settings extends Component {
  static navigationOptions = {
          header : {
-            title: '1 hour + of physical activity',
+            right: <Button title="Next"/>,
+            title: 'Select minutes of activity',
             style: {
                 backgroundColor: "skyblue"
             },
