@@ -14,6 +14,7 @@ import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // App Imports
 import Home from '../components/Home';
 import Stickers from '../components/Stickers';
+import History from '../components/History';
 import Settings from '../components/Settings';
 
 export default class IosTabBar extends Component {
@@ -59,6 +60,18 @@ export default class IosTabBar extends Component {
                     });
                     }}>
                     <Stickers />
+                </MCIcons.TabBarItemIOS>
+                <MCIcons.TabBarItemIOS
+                    title="History"
+                    iconName="history"
+                    selectedIconName="history"
+                    selected={this.state.selectedTab === 'history'}
+                    onPress={() => {
+                    this.setState({
+                        selectedTab: 'history',
+                    });
+                    }}>
+                    <History />
                 </MCIcons.TabBarItemIOS>
                 <Ionicons.TabBarItemIOS
                     title="Settings"
