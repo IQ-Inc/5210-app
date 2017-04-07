@@ -19,7 +19,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 const styles = StyleSheet.create({
   text: {
     paddingHorizontal: 12,
-    fontSize: 20,
+    fontSize: 14,
     color: 'white',
     flex: 4,
   },

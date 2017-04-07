@@ -7,7 +7,8 @@ import {
   Linking,
   StyleSheet,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  AsyncStorage
 } from 'react-native';
 
 import FIcons from 'react-native-vector-icons/Foundation';
@@ -20,6 +21,20 @@ export default class Settings extends Component {
 
     constructor(props) {
         super(props);
+
+        this._resetDevice = this._resetDevice.bind(this);
+    }
+
+    _resetDevice() {
+        const { navigate } = this.props.navigation;
+        
+        AsyncStorage.setItem('@5210App:onboard_complete', JSON.stringify(false))
+                    .then(onboard_complete => {
+                        navigate('Main');
+                    })
+                    .catch(err => {
+                        console.error("Unable to save onboard_complete");
+                    });
     }
 
     render() {
@@ -42,6 +57,12 @@ export default class Settings extends Component {
                         <View style={styles.box}>
                             <Text style={styles.header}>View 5-2-1-0 Video</Text>
                             <FIcons name="play-video" size={40} style={{color: '#ffffff'}} />
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this._resetDevice}>
+                        <View style={styles.box}>
+                            <Text style={styles.header}>Reset Application (Demo Only)</Text>
+                            <FAIcons name="power-off" size={40} style={{color: '#ffffff'}} />
                         </View>
                     </TouchableOpacity>
                 </ScrollView>

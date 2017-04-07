@@ -83,7 +83,7 @@ export default class IosTabBar extends Component {
                         selectedTab: 'settings',
                     });
                     }}>
-                    <Settings />
+                    <Settings navigation={this.props.navigation} />
                 </Ionicons.TabBarItemIOS>
             </TabBarIOS>
         )
