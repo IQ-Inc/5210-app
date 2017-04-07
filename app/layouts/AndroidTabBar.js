@@ -70,7 +70,7 @@ export default class AndroidTabBar extends Component {
                        />
         case '2':
             return <MCIcons
-                       name="sticker"
+                       name="star-outline"
                        size={36}
                        />
         case '3':
@@ -80,7 +80,7 @@ export default class AndroidTabBar extends Component {
                        />
         case '4':
              return <MCIcons
-                       name="settings"
+                       name="information-outline"
                        size={36}
                        />
         default:

@@ -13,6 +13,7 @@ const data = [
     { text: "lemonade"  , img: require("../images/drinks/lemonade.png") },
     { text: "soda"  , img: require("../images/drinks/soda.png") },
     { text: "sports drink"  , img: require("../images/drinks/sports drink.png") },
+    { text: "water"  , img: require("../images/drinks/water.png") },
 ]
 
 export default class Settings extends Component {
