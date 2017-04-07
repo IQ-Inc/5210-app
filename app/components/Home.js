@@ -10,6 +10,9 @@ import {
 import Images from '../config/images';
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import { GetProgress } from '../config/ProgressStorage'
+import { DateAsStorageKey } from '../config/datetime'
+
 export default class Home extends Component {
     constructor(props){
         super(props);
@@ -28,6 +31,13 @@ export default class Home extends Component {
 
     render() {
         const { navigate } = this.props.navigation;
+
+        //
+        // Local storage debug here
+        // TODO remove me :)
+        //
+        const key = DateAsStorageKey()
+        GetProgress(key, (progress) => console.log(progress))
 
         if (!this.state.helpDisplayed){
             return (

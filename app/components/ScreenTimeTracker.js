@@ -7,6 +7,10 @@ import {
 } from 'react-native';
 import SelectableList from './SelectableList';
 
+
+import { DateAsStorageKey } from '../config/datetime'
+import { PutProgress } from '../config/ProgressStorage'
+
 const data = [
   { text: "computer"    , img: require("../images/screens/computer.png") },
   { text: "phone"    , img: require("../images/screens/phone.png") },
@@ -38,6 +42,8 @@ export default class Settings extends Component {
   _onNext = () => {
     if ( this.minutes <= 120 ) {
       alert("Keep off that screen! You get a sticker")
+      const key = DateAsStorageKey()
+      PutProgress( key, { "2" : true } )
     } else {
       alert("Oh no, too much screen time! No sticker today wahhhh :( ")
     }

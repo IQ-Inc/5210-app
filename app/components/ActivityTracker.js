@@ -7,6 +7,9 @@ import {
 } from 'react-native';
 import SelectableList from './SelectableList';
 
+import { DateAsStorageKey } from '../config/datetime'
+import { PutProgress } from '../config/ProgressStorage'
+
 const data = [
     { text: "walking"    , img: require("../images/activities/walking.png") },
     { text: "biking"  , img: require("../images/activities/biking.png") },
@@ -47,6 +50,8 @@ export default class Settings extends Component {
         if ( this.minutes >= 60 )
         {
             alert("Wow you're active! You get a sticker")
+            const key = DateAsStorageKey()
+            PutProgress( key, { "1" : true } )
         }
         else
         {
