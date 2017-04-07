@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  Button
+  Button,
+  Modal,
 } from 'react-native';
 import SelectableList from './SelectableList';
 
@@ -20,7 +21,6 @@ const data = [
 export default class Settings extends Component {
  static navigationOptions = {
          header : {
-            right: <Button title="Save"/>,
             title: 'Select number of servings',
             style: {
                 backgroundColor: "skyblue"
@@ -28,11 +28,33 @@ export default class Settings extends Component {
             tintColor: "white"
          }
        };
+
+    constructor(props) {
+        super(props)
+        this.drinks = 0
+    }  
+
+    _onChange = (data) => {
+        this.drinks = data.reduce((acc, elem) => { return acc + elem.count }, 0)
+    }
+
+    _onNext = () => {
+        // TODO account for water!
+        if (this.drinks == 0)
+        {
+            alert("Great job! You get a sticker")
+        }
+        else
+        {
+            alert("Sorry, no sticker today. Try drinking fewer sugary drinks tomorrow!")
+        }
+    }
+
     render() {
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, flexDirection:'row', backgroundColor: 'skyblue'}}>
-                    <SelectableList data={data} onSelection={this.onSelection} />
+                    <SelectableList data={data} onChange={this._onChange} onNext={this._onNext}/>
                 </View>
             </View>
         )

@@ -26,7 +26,6 @@ const data = [
 export default class Settings extends Component {
  static navigationOptions = {
          header : {
-            right: <Button title="Next"/>,
             title: 'Select minutes of activity',
             style: {
                 backgroundColor: "skyblue"
@@ -34,13 +33,35 @@ export default class Settings extends Component {
             tintColor: "white"
          }
        };
+
+    constructor(props) {
+        super(props)
+        this.minutes = 0
+    }
+
+    _onChange = (data) => {
+        this.minutes = data.reduce((acc, elem) => { return acc + elem.count }, 0)
+    }
+
+    _onNext = () => {
+        if ( this.minutes >= 60 )
+        {
+            alert("Wow you're active! You get a sticker")
+        }
+        else
+        {
+            alert("That wasn't 60 minutes! Play outside tomorrow to get a sticker!")
+        }
+    }
+
     render() {
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, flexDirection:'row', backgroundColor: 'skyblue'}}>
                     <SelectableList data={data}
-                                    onSelection={this.onSelection}
-                                    step={15} />
+                                    onChange={this._onChange}
+                                    step={15}
+                                    onNext={this._onNext} />
                 </View>
             </View>
         )

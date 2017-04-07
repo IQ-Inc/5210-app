@@ -59,7 +59,7 @@ export default SelectableListRow = (props) => {
 		return <Image source={img} style={styles.image}/>
 	}
 
-  const step = (props.step != null && typeof props.step != 'undefined')
+  const step = (props.step !== null && typeof props.step !== 'undefined')
              ? props.step
              : 1
   const count = props.count
