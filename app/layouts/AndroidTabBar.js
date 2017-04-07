@@ -8,6 +8,7 @@ import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from '../components/Home';
 import Stickers from '../components/Stickers';
 import Settings from '../components/Settings';
+import History from '../components/History';
 
 const styles = StyleSheet.create({
   container: {
@@ -53,9 +54,9 @@ export default class AndroidTabBar extends Component {
     case '2':
       return <Stickers />
     case '3':
-      return null;
+      return <History />;
     case '4':
-        return <Settings />
+        return <Settings navigation={this.props.navigation}/>
     default:
       return null;
     }

@@ -22,7 +22,8 @@ export default class Home extends Component {
             two: 'screenTime',
             one: 'activity',
             zero: 'water',
-            buttonText: 'Learn more'
+            buttonText: 'Learn more',
+            progress: {}
         };
         this.onButtonPress = this.onButtonPress.bind(this);
     }
@@ -50,29 +51,8 @@ export default class Home extends Component {
         }
       }
 
-    componentWillMount() {
-        var today = new Date();
-        var todayFormatted = (today.getMonth()+1).toString()+today.getDate().toString()+today.getFullYear().toString();
-
-        AsyncStorage.getItem('@5210App:'+todayFormatted)
-            .then(todayFormatted => {
-                todayFormatted = JSON.parse(todayFormatted);
-                this.setState({todayFormatted})
-            })
-            .catch(err => {
-                console.error("Unable to get key" + todayFormatted, err);
-            })
-
-    }
     render() {
         const { navigate } = this.props.navigation;
-        //
-        // Local storage debug here
-        // TODO remove me :)
-        //
-        const key = DateAsStorageKey()
-        GetProgress(key, (progress) => console.log(progress));
-
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 7, flexDirection:'row', backgroundColor: 'powderblue'}}>
