@@ -14,94 +14,75 @@ export default class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
-            helpDisplayed: false
-        }
-         this.onButtonPress = this.onButtonPress.bind(this);
+            helpDisplayed: false,
+            five: 'foodTracker',
+            two: 'screenTime',
+            one: 'activity',
+            zero: 'water',
+            buttonText: 'Learn more'
+        };
+        this.onButtonPress = this.onButtonPress.bind(this);
     }
 
     onButtonPress(){
-        this.setState({
-           helpDisplayed: !this.state.helpDisplayed
-        });
+        if (!this.state.helpDisplayed){
+            this.setState({
+                helpDisplayed: !this.state.helpDisplayed,
+                five: this.state.five + '_info',
+                two: this.state.two + '_info',
+                one: this.state.one + '_info',
+                zero: this.state.zero + '_info',
+                buttonText: 'Close help'
+            });
+        }
+        else {
+            this.setState({
+                helpDisplayed: !this.state.helpDisplayed,
+                five: 'foodTracker',
+                two: 'screenTime',
+                one: 'activity',
+                zero: 'water',
+                buttonText: 'Learn more'
+            })
+        }
       }
-
 
     render() {
         const { navigate } = this.props.navigation;
-
-        if (!this.state.helpDisplayed){
-            return (
-                <View style={{flex: 1}}>
-                    <View style={{flex: 7, flexDirection:'row', backgroundColor: 'powderblue'}}>
-                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} >
-                            <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('FoodTracker', {navigation: this.props.navigation})}>
-                                <Image source={Images.foodTracker.source} style={Images.foodTracker.style} />
-                            </TouchableOpacity>
-                        </View>
-                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                            <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('ScreenTimeTracker')}>
-                                <Image source={Images.screenTime.source} style={Images.screenTime.style} />
-                            </TouchableOpacity>
-                        </View>
+        return (
+            <View style={{flex: 1}}>
+                <View style={{flex: 7, flexDirection:'row', backgroundColor: 'powderblue'}}>
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} >
+                        <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('FoodTracker', {navigation: this.props.navigation})}>
+                            <Image source={Images[this.state.five].source} style={Images[this.state.five].style} />
+                        </TouchableOpacity>
                     </View>
-                    <View style={{flex: 7, flexDirection:'row', backgroundColor: 'powderblue'}}>
-                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                            <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('ActivityTracker')}>
-                                <Image source={Images.activity.source} style={Images.activity.style} />
-                            </TouchableOpacity>
-                        </View>
-                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                            <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('DrinkTracker')}>
-                                <Image source={Images.water.source} style={Images.water.style} />
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={{flex: 1, flexDirection:'row', backgroundColor: 'powderblue'}}>
-                        <View style={{flex: 1}} >
-                            <Button title="Learn More"
-                                    onPress ={this.onButtonPress}
-                            />
-                        </View>
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                        <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('ScreenTimeTracker')}>
+                            <Image source={Images[this.state.two].source} style={Images[this.state.two].style} />
+                        </TouchableOpacity>
                     </View>
                 </View>
-            )
-        }
-        else {
-          return (
-              <View style={{flex: 1}}>
-                  <View style={{flex: 7, flexDirection:'row', backgroundColor: 'powderblue'}}>
-                      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} >
-                          <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('FoodTracker')}>
-                              <Image source={Images.five.source} style={Images.five.style} />
-                          </TouchableOpacity>
-                      </View>
-                      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                          <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('ScreenTimeTracker')}>
-                              <Image source={Images.two.source} style={Images.two.style} />
-                          </TouchableOpacity>
-                      </View>
-                  </View>
-                  <View style={{flex: 7, flexDirection:'row', backgroundColor: 'powderblue'}}>
-                      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                          <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('ActivityTracker')}>
-                              <Image source={Images.one.source} style={Images.one.style} />
-                          </TouchableOpacity>
-                      </View>
-                      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                          <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('DrinkTracker')}>
-                              <Image source={Images.zero.source} style={Images.zero.style} />
-                          </TouchableOpacity>
-                      </View>
-                  </View>
-                  <View style={{flex: 1, flexDirection:'row', backgroundColor: 'powderblue'}}>
-                      <View style={{flex: 1}} >
-                          <Button title="Close help"
-                                  onPress ={this.onButtonPress}
-                          />
-                      </View>
-                  </View>
-              </View>
-          )
-        }
+                <View style={{flex: 7, flexDirection:'row', backgroundColor: 'powderblue'}}>
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                        <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('ActivityTracker')}>
+                            <Image source={Images[this.state.one].source} style={Images[this.state.one].style} />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                        <TouchableOpacity activeOpacity={0.5} onPress = {() => navigate('DrinkTracker')}>
+                            <Image source={Images[this.state.zero].source} style={Images[this.state.zero].style} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={{flex: 1, flexDirection:'row', backgroundColor: 'powderblue'}}>
+                    <View style={{flex: 1}} >
+                        <Button title={this.state.buttonText}
+                                onPress ={this.onButtonPress}
+                        />
+                    </View>
+                </View>
+            </View>
+        )
     }
 }

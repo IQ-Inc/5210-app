@@ -43,10 +43,10 @@ const Images = {
     activity: {
         source: require('../images/Sports-21.png'),
         style: {
-           flex: 1,
-           width: 128,
-           height: 128,
-           resizeMode: 'contain'
+            flex: 1,
+            width: 128,
+            height: 128,
+            resizeMode: 'contain'
         }
     },
     lionSticker: {
@@ -58,141 +58,177 @@ const Images = {
             resizeMode: 'contain'
         }
     },
-     dogSticker: {
-         source: require('../images/stickers/Animals-01.png'),
-         style: {
-             flex: 1,
-             width: 64,
-             height: 64,
-             resizeMode: 'contain'
-         }
-     },
-      catSticker: {
-          source: require('../images/stickers/Animals-03.png'),
-          style: {
-              flex: 1,
-              width: 64,
-              height: 64,
-              resizeMode: 'contain'
-          }
-      },
-       rabbitSticker: {
-           source: require('../images/stickers/Animals-05.png'),
-           style: {
-               flex: 1,
-               width: 64,
-               height: 64,
-               resizeMode: 'contain'
-           }
-       },
-        mouseSticker: {
-            source: require('../images/stickers/Animals-06.png'),
-            style: {
-                flex: 1,
-                width: 64,
-                height: 64,
-                resizeMode: 'contain'
-            }
-        },
-         hamsterSticker: {
-             source: require('../images/stickers/Animals-07.png'),
-             style: {
-                 flex: 1,
-                 width: 64,
-                 height: 64,
-                 resizeMode: 'contain'
-             }
-         },
-          squirrelSticker: {
-              source: require('../images/stickers/Animals-08.png'),
-              style: {
-                  flex: 1,
-                  width: 64,
-                  height: 64,
-                  resizeMode: 'contain'
-              }
-          },
-           hedgehogSticker: {
-               source: require('../images/stickers/Animals-09.png'),
-               style: {
-                   flex: 1,
-                   width: 64,
-                   height: 64,
-                   resizeMode: 'contain'
-               }
-           },
-            turtleSticker: {
-                source: require('../images/stickers/Animals-10.png'),
-                style: {
-                    flex: 1,
-                    width: 64,
-                    height: 64,
-                    resizeMode: 'contain'
-                }
-            },
-             elephantSticker: {
-                 source: require('../images/stickers/Animals-13.png'),
-                 style: {
-                     flex: 1,
-                     width: 64,
-                     height: 64,
-                     resizeMode: 'contain'
-                 }
-             },
-              giraffeSticker: {
-                  source: require('../images/stickers/Animals-10.png'),
-                  style: {
-                      flex: 1,
-                      width: 64,
-                      height: 64,
-                      resizeMode: 'contain'
-                  }
-              },
-               beeSticker: {
-                   source: require('../images/stickers/Animals-54.png'),
-                   style: {
-                       flex: 1,
-                       width: 64,
-                       height: 64,
-                       resizeMode: 'contain'
-                   }
-               },
-               five: {
-                    source: require('../images/5 circle with words.png'),
-                   style: {
-                       flex: 1,
-                       width: 128,
-                       height: 128,
-                       resizeMode: 'contain'
-                   }
-               },
-               two: {
-                  source: require('../images/2 circle with words.png'),
-                  style: {
-                      flex: 1,
-                      width: 128,
-                      height: 128,
-                      resizeMode: 'contain'
-                  }
-              },
-              one: {
-                  source: require('../images/1 circle with words.png'),
-                 style: {
-                     flex: 1,
-                     width: 128,
-                     height: 128,
-                     resizeMode: 'contain'
-                 }
-             },
-             zero: {
-                 source: require('../images/0 circle with words.png'),
-                style: {
-                    flex: 1,
-                    width: 128,
-                    height: 128,
-                    resizeMode: 'contain'
-                }
-            },
+    dogSticker: {
+        source: require('../images/stickers/Animals-01.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    catSticker: {
+        source: require('../images/stickers/Animals-03.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    rabbitSticker: {
+        source: require('../images/stickers/Animals-05.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    mouseSticker: {
+        source: require('../images/stickers/Animals-06.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    hamsterSticker: {
+        source: require('../images/stickers/Animals-07.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    squirrelSticker: {
+        source: require('../images/stickers/Animals-08.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    hedgehogSticker: {
+        source: require('../images/stickers/Animals-09.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    turtleSticker: {
+        source: require('../images/stickers/Animals-10.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    elephantSticker: {
+        source: require('../images/stickers/Animals-13.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    giraffeSticker: {
+        source: require('../images/stickers/Animals-10.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    beeSticker: {
+        source: require('../images/stickers/Animals-54.png'),
+        style: {
+            flex: 1,
+            width: 64,
+            height: 64,
+            resizeMode: 'contain'
+        }
+    },
+    foodTracker_info: {
+        source: require('../images/5 circle with words.png'),
+        style: {
+            flex: 1,
+            width: 128,
+            height: 128,
+            resizeMode: 'contain'
+        }
+    },
+    screenTime_info: {
+        source: require('../images/2 circle with words.png'),
+        style: {
+            flex: 1,
+            width: 128,
+            height: 128,
+            resizeMode: 'contain'
+        }
+    },
+    activity_info: {
+        source: require('../images/1 circle with words.png'),
+        style: {
+            flex: 1,
+            width: 128,
+            height: 128,
+            resizeMode: 'contain'
+        }
+    },
+    water_info: {
+        source: require('../images/0 circle with words.png'),
+        style: {
+            flex: 1,
+            width: 128,
+            height: 128,
+            resizeMode: 'contain'
+        }
+    },
+    foodTracker_check: {
+        source: require('../images/Food_Fruit_Vegetables-06-check.png'),
+        style: {
+            flex: 1,
+            width: 128,
+            height: 128,
+            resizeMode: 'contain'
+        }
+    },
+    screenTime_check: {
+        source: require('../images/Music_Entertainment-25-check.png'),
+        style: {
+            flex: 1,
+            width: 128,
+            height: 128,
+            resizeMode: 'contain'
+        }
+    },
+    activity_check: {
+        source: require('../images/Sports-21-check.png'),
+        style: {
+            flex: 1,
+            width: 128,
+            height: 128,
+            resizeMode: 'contain'
+        }
+    },
+    water_check: {
+        source: require('../images/Water-03-check.png'),
+        style: {
+            flex: 1,
+            width: 128,
+            height: 128,
+            resizeMode: 'contain'
+        }
+    }
 
 
 }
