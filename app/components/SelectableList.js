@@ -46,13 +46,29 @@ import React from 'react'
 import {
 	ListView,
 	Text,
-	View
+	View,
+  StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 
-import SelectableListRow, {
-  ROW_INCREMENT,
-  ROW_DECREMENT
-} from './SelectableListRow'
+import SelectableListRow from './SelectableListRow'
+
+const styles = StyleSheet.create({
+  button: {
+    borderColor: '#ffffff',
+    borderWidth: 2,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    backgroundColor: "steelblue"
+  },
+  text: {
+    color: '#ffffff',
+    fontSize: 50,
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  }
+})
 
 export default class SelectableList extends React.Component {
 
@@ -140,6 +156,11 @@ export default class SelectableList extends React.Component {
           renderSeparator={this._renderSeparator}
           style={{...this.props.style}}
         />
+        <TouchableOpacity onPress={this.props.onNext} >
+          <View style={{flex: 1}} style={styles.button}>
+              <Text style={styles.text}>{"LOG"}</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     )
 

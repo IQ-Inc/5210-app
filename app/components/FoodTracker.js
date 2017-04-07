@@ -23,13 +23,10 @@ const data = [
 ]
 
 export default class Settings extends Component {
-    constructor(props){
-        super(props);
-    }
+
     static navigationOptions = {
          header : {
             title: 'Select number of servings',
-            right: <Button title="Next"/>,
             style: {
                 backgroundColor: "skyblue"
             },
@@ -37,10 +34,22 @@ export default class Settings extends Component {
          }
        };
 
-  _onChange(data) {
-        const minutes = data.reduce((acc, elem) => { return acc + elem.count }, 0)
-        this.setState({ minutes })
-  }
+    constructor(props) {
+        super(props)
+        this.servings = 0
+    }
+
+    _onChange = (data) => {
+        this.servings = data.reduce((acc, elem) => { return acc + elem.count }, 0)
+    } 
+
+    _onNext = () => {
+        if ( this.servings >= 5 ) {
+            alert("Nom nom nom! You get a sticker")
+        } else {
+            alert("Eat 5 servings tomorrow to get a sticker!")
+        }
+    }
 
     render() {
         const { navigate } = this.props.navigation;
@@ -48,7 +57,8 @@ export default class Settings extends Component {
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, flexDirection:'row', backgroundColor: 'skyblue'}}>
-                    <SelectableList data={data} onChange={this._onChange}/>
+                    <SelectableList data={data} onChange={this._onChange}
+                        onNext={this._onNext}/>
                 </View>
             </View>
         )

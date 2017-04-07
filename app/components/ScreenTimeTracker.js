@@ -19,7 +19,6 @@ export default class Settings extends Component {
  static navigationOptions = {
         header : {
         title: 'Select minutes of screen time',
-        right: <Button title="Next"/>,
         style: {
             backgroundColor: "skyblue"
         },
@@ -29,15 +28,19 @@ export default class Settings extends Component {
 
   constructor(props) {
     super(props)
-
-    this.state = {
-      minutes: 0
-    }
+    this.minutes = 0
   }
 
-  _onChange(data) {
-    const minutes = data.reduce((acc, elem) => { return acc + elem.count }, 0)
-    this.setState({ minutes })
+  _onChange = (data) => {
+    this.minutes = data.reduce((acc, elem) => { return acc + elem.count }, 0)
+  }
+
+  _onNext = () => {
+    if ( this.minutes <= 120 ) {
+      alert("Keep off that screen! You get a sticker")
+    } else {
+      alert("Oh no, too much screen time! No sticker today wahhhh :( ")
+    }
   }
 
   render() {
@@ -46,7 +49,8 @@ export default class Settings extends Component {
         <View style={{flex: 1, flexDirection:'row', backgroundColor: 'skyblue'}}>
           <SelectableList data={data}
                           onChange={this._onChange}
-                          step={15}/>
+                          step={15}
+                          onNext={this._onNext}/>
         </View>
       </View>
       )
