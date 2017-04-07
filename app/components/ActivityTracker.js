@@ -24,6 +24,8 @@ const data = [
     { text: "soccer"   , img: require("../images/activities/soccer.png") },
     { text: "swimming"   , img: require("../images/activities/swimming.png") },
     { text: "tag"   , img: require("../images/activities/tag.png") },
+    { text: "other"   , img: require("../images/activities/other.png") },
+
 ]
 
 export default class Settings extends Component {
