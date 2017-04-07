@@ -38,7 +38,9 @@ export default class Settings extends Component {
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, flexDirection:'row', backgroundColor: 'skyblue'}}>
-                    <SelectableList data={data} onSelection={this.onSelection} />
+                    <SelectableList data={data}
+                                    onSelection={this.onSelection}
+                                    step={15} />
                 </View>
             </View>
         )
