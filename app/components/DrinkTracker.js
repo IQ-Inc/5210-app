@@ -8,6 +8,9 @@ import {
 } from 'react-native';
 import SelectableList from './SelectableList';
 
+import { DateAsStorageKey } from '../config/datetime'
+import { PutProgress } from '../config/ProgressStorage'
+
 const data = [
     { text: "iced tea"    , img: require("../images/drinks/iced tea.png") },
     { text: "juice"  , img: require("../images/drinks/juice.png") },
@@ -43,6 +46,8 @@ export default class Settings extends Component {
         if (this.drinks == 0)
         {
             alert("Great job! You get a sticker")
+            const key = DateAsStorageKey()
+            PutProgress(key, { "0" : true } )
         }
         else
         {

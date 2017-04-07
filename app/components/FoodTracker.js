@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
 import {
+  AsyncStorage,
   Text,
   View,
   Button
 } from 'react-native';
 import SelectableList from './SelectableList';
+
+import { DateAsStorageKey } from '../config/datetime'
+import { PutProgress } from '../config/ProgressStorage'
 
 const data = [
     { text: "artichoke"    , img: require("../images/foods/artichoke.png") },
@@ -46,6 +50,8 @@ export default class Settings extends Component {
     _onNext = () => {
         if ( this.servings >= 5 ) {
             alert("Nom nom nom! You get a sticker")
+            const key = DateAsStorageKey()
+            PutProgress(key, { "5": true } )
         } else {
             alert("Eat 5 servings tomorrow to get a sticker!")
         }
