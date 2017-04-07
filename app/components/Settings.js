@@ -14,7 +14,6 @@ import FIcons from 'react-native-vector-icons/Foundation';
 import FAIcons from 'react-native-vector-icons/FontAwesome';
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import CodefestWebview from './CodefestWebview';
 import urls from '../config/urls';
 
 export default class Settings extends Component {
