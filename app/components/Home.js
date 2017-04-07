@@ -5,7 +5,7 @@ import {
   Image,
   TouchableOpacity,
   Button,
-  Alert
+  AsyncStorage
 } from 'react-native';
 import Images from '../config/images';
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -47,6 +47,20 @@ export default class Home extends Component {
         }
       }
 
+    componentWillMount() {
+        var today = new Date();
+        var todayFormatted = (today.getMonth()+1).toString()+today.getDate().toString()+today.getFullYear().toString();
+
+        AsyncStorage.getItem('@5210App:'+todayFormatted)
+            .then(todayFormatted => {
+                todayFormatted = JSON.parse(todayFormatted);
+                this.setState({todayFormatted})
+            })
+            .catch(err => {
+                console.error("Unable to get key" + todayFormatted, err);
+            })
+
+    }
     render() {
         const { navigate } = this.props.navigation;
         return (
